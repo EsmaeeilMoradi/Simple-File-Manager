@@ -21,6 +21,11 @@ android {
         multiDexEnabled true
         setProperty("archivesBaseName", "file-manager")
         vectorDrawables.useSupportLibrary = true
+        configurations.all {
+            resolutionStrategy { force 'androidx.core:core-ktx:1.6.0' }
+        }
+
+
     }
 
     signingConfigs {
@@ -64,4 +69,5 @@ dependencies {
     implementation 'com.alexvasilkov:gesture-views:2.5.2'
     implementation 'androidx.documentfile:documentfile:1.0.1'
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    implementation project(path: ':mycommons')
 }
